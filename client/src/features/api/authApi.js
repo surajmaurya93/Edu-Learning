@@ -7,18 +7,18 @@ export const authApi = createApi({
     reducerPath:"authApi",
     baseQuery:fetchBaseQuery({
         baseUrl:USER_API,
-        credentials:"include"           //help removing errors
+        credentials:"include"           
     }), 
-    endpoints:(builder) => ({               //builder se data fatch and post karte hai
-        //register user mutation                 
-        registerUser: builder.mutation({       //jab data api se fetch karna hota hai to hum query use karte hai and jab hume us api me data post karna hota hai to mutation use karte hai.
+    endpoints:(builder) => ({               
+
+        registerUser: builder.mutation({       
             query:(inputData) => ({
                 url:"register",
                 method:"POST",
                 body:inputData
             })
         }),
-        //login user mutation
+        
         loginUser: builder.mutation({       
             query:(inputData) => ({
                 url:"login",
@@ -33,11 +33,19 @@ export const authApi = createApi({
                     console.log(error)
                 }
             }
-        }),     
+        }),
+        
+        loadUser: builder.query({
+            query: () => ({
+                url:"profile",
+                method:"GET"
+            }),
+        })
     })
 });
 
 export const {
     useRegisterUserMutation,
-    useLoginUserMutation
+    useLoginUserMutation,
+    useLoadUserQuery
 } = authApi;
