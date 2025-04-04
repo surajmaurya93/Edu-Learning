@@ -34,12 +34,12 @@ const AddCourse = () => {
 
     //for displaying toast message
     useEffect(() => {
-      if(isSuccess){
-        toast.success(data?.message || "Course created")
-        navigate("/admin/course")
-      }
+        if (isSuccess) {
+            toast.success(data?.message || "Course created")
+            navigate("/admin/course")
+        }
     }, [isSuccess, error])
-    
+
 
     return (
         <div className='flex-1 mx-10'>

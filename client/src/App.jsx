@@ -12,6 +12,7 @@ import Dashboard from './pages/admin/Dashboard'
 import CourseTable from './pages/admin/course/CourseTable'
 import AddCourse from './pages/admin/course/AddCourse'
 import EditCourse from './pages/admin/course/EditCourse'
+import CreateLecture from './pages/admin/lecture/CreateLecture'
 
 
 const appRouter = createBrowserRouter([
@@ -24,7 +25,7 @@ const appRouter = createBrowserRouter([
         element: (
           <>
             <HeroSection />
-            <Courses/>
+            <Courses />
           </>
         )
       },
@@ -44,27 +45,30 @@ const appRouter = createBrowserRouter([
       // Admin Routes Start From Here
       {
         path: "admin",
-        element:<Sidebar/>,
-        children:[
+        element: <Sidebar />,
+        children: [
           {
             path: "dashboard",
-            element:<Dashboard/>
+            element: <Dashboard />
           },
           {
             path: "course",
-            element:<CourseTable/>
+            element: <CourseTable />
           },
           {
             path: "course/create",
-            element:<AddCourse/>
+            element: <AddCourse />
           },
           {
             path: "course/:courseId",
-            element:<EditCourse/>
-          }
+            element: <EditCourse />
+          },
+          {
+            path: "course/:courseId/lecture",
+            element: <CreateLecture />
+          },
         ]
       }
-
     ],
   },
 ]);
@@ -73,7 +77,7 @@ function App() {
 
   return (
     <>
-      <RouterProvider router={appRouter}/>
+      <RouterProvider router={appRouter} />
     </>
   )
 }
