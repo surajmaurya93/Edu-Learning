@@ -249,3 +249,17 @@ export const getLectureById = async (req, res) => {
         })
     }
 }
+
+
+// publish unpublish course logic
+export const togglePublishCourse = async (req,res) => {
+    try {
+        const {courseId} = req.params;
+        
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({
+            message: "Failed to update status"
+        })
+    }
+}
