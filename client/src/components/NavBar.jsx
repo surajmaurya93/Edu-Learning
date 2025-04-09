@@ -57,7 +57,7 @@ const NavBar = () => {
             <div className='max-w-6xl mx-auto hidden justify-between items-center gap-10 h-full md:flex'>
                 <div className='flex items-center gap-2'>
                     <School size={"30"} />
-                    <h1 className='hidden md:block font-extrabold text-2xl'>Edu. Learning</h1>
+                    <Link to="/"><h1 className='hidden md:block font-extrabold text-2xl'>Edu. Learning</h1></Link>
                 </div>
                 {/* User Icons And Dark Mode Icons */}
                 <div className='flex items-center gap-6'>
