@@ -13,6 +13,9 @@ import AddCourse from './pages/admin/course/AddCourse'
 import EditCourse from './pages/admin/course/EditCourse'
 import CreateLecture from './pages/admin/lecture/CreateLecture'
 import EditLecture from './pages/admin/lecture/EditLecture'
+import Footer from './pages/student/Footer'
+import Banner from './pages/student/Banner'
+import Testimonials from './pages/student/Testimonial'
 
 
 const appRouter = createBrowserRouter([
@@ -26,6 +29,9 @@ const appRouter = createBrowserRouter([
           <>
             <HeroSection />
             <Courses />
+            <Testimonials/>
+            <Banner/>
+            <Footer/>
           </>
         )
       },
